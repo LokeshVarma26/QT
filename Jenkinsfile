@@ -1,14 +1,14 @@
 pipeline {
-    agent { label 'JDK'}
+    agent {label 'JDK'}
     stages { 
-        stage ('GIT') {
+        stage('GIT') {
             steps {
-                git url: 'https://github.com/spring-projects/spring-petclinic.git'
-                    branch: 'main'
+                git url: 'https://github.com/spring-projects/spring-petclinic.git',
+                branch: 'main'
                     
             }
         }
-        stage ('Build') {
+        stage('Build') {
             steps {
                 sh 'mvn package'
             }
